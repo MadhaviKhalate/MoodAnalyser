@@ -15,13 +15,22 @@ namespace Mood_Analyser
         }
         public string Mood()
         {
-            if (this.message.ToLower().Contains("sad"))
+            try
             {
-                Console.WriteLine("Your Mood is Sad");
-                return "Sad";
+                if (this.message.ToLower().Contains("sad"))
+                {
+                    return "Sad";
+                }
+                else
+                {
+                    return "Happy";
+                }
             }
-            Console.WriteLine("Your Mood is Happy");
-            return "Happy";
+            catch
+            {
+                Console.WriteLine("Catch block is Executing");
+                return "Happy";
+            }
         }
     }
 }
