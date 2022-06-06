@@ -8,7 +8,7 @@ namespace Mood_Analyser
         {
             Console.WriteLine("Enter Your Mood:");
             string userInput = Console.ReadLine();
-            MoodAnalyser analyser = new MoodAnalyser();
+            Analyser analyser = new Analyser();
             Console.WriteLine("Your Mood: " + analyser.Mood(userInput));
         }
     }
