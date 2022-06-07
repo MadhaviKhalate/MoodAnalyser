@@ -6,7 +6,7 @@ namespace Mood_Analyser
     {
         public static void Main(string[] args)
         {
-            string input = null;
+            string input = "";
             Analyser analyse = new Analyser(input);
             analyse.Mood();
         }
