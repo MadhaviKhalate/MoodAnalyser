@@ -17,7 +17,7 @@ namespace MoodAnalyserTesting
             }
         }
         [Test]
-        public void GivenEmptyAsInput_AnalyseMood_ThrowEmptyException()
+        public void ThrowEmptyException()
         {
             try
             {
