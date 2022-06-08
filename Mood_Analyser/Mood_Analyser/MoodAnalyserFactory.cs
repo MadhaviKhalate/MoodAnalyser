@@ -30,7 +30,7 @@ namespace Mood_Analyser
             }
             else
             {
-                throw new CustomException(CustomException.ExceptionTypes.NO_SUCH_METHOD, "Constructor is Not Found");
+                throw new CustomException(CustomException.ExceptionTypes.NO_SUCH_METHOD, "Constructor Not Found");
             }
         }
     }
