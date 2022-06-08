@@ -76,5 +76,19 @@ namespace Mood_Analyser
             object actual = MoodAnalyserFactory.MoodAnalyserUsingParamaterisedConstructor("Mood_Analyser.Analyser", "Analyser", "Happy");
             expected.Equals(actual);
         }
+        [Test]
+        public void GivenImproperClassName_ShouldthrowNoSuchClassException_usingParameterisedConstructor()
+        {
+            try
+            {
+                object expected = new Analyser("Happy");
+                object actual = MoodAnalyserFactory.MoodAnalyserUsingParamaterisedConstructor("MoodAnalyser.Anal", "Analyser", "Happy");
+                expected.Equals(actual);
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual("Class Not Found", ex.Message);
+            }
+        }
     }
 }
