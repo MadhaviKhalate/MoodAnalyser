@@ -13,11 +13,11 @@ namespace Mood_Analyser
             ENTERED_NULL, ENTERED_EMPTY, NO_SUCH_FIELD, 
             NO_SUCH_METHOD, NO_SUCH_CLASS, OBJECT_CREATION_ISSUE
         }
-        ExceptionTypes type;
+        ExceptionTypes Type;
 
-        public CustomException(ExceptionTypes Type, string message) : base(message)
+        public CustomException(ExceptionTypes type, string message) : base(message)
         {
-            this.type = Type;
+            this.Type = type;
         }
     }
 }

@@ -12,8 +12,8 @@ namespace Mood_Analyser
     {
         public static object CreateMoodAnalyse(string className,string constructorName)
         {
-            string pattern = @"," + constructorName + "$";
-            Match result = Regex.Match(className, pattern);
+            string pattern = @"^" + constructorName + "$";
+            Match result = Regex.Match(pattern, className);
 
             if (result.Success)
             {

@@ -9,6 +9,10 @@ namespace Mood_Analyser
     public class Analyser
     {
         public string message;
+        public Analyser()
+        {
+
+        }
         public Analyser(string message)
         {
             this.message = message;
@@ -17,6 +21,11 @@ namespace Mood_Analyser
         {
             try
             {
+                if (this.message.Contains(string.Empty))
+                {
+                    throw new CustomException(CustomException.ExceptionTypes.ENTERED_EMPTY, "Mood should not be Empty");
+
+                }
                 if (this.message.ToLower().Contains("sad"))
                 {
                     return "Sad";
@@ -26,10 +35,9 @@ namespace Mood_Analyser
                     return "Happy";
                 }
             }
-            catch
+            catch (NullReferenceException)
             {
-                Console.WriteLine("Catch block is Executing");
-                return "Happy";
+                throw new CustomException(CustomException.ExceptionTypes.ENTERED_NULL, "Mood should not be Null");
             }
         }
     }
