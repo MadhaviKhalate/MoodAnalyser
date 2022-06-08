@@ -13,7 +13,7 @@ namespace Mood_Analyser
             }
             catch (Exception ex)
             {
-                Assert.AreEqual("Null Exception", ex.Message);
+                Assert.AreEqual("Mood should not be Null", ex.Message);
             }
         }
         [Test]
@@ -27,7 +27,7 @@ namespace Mood_Analyser
             }
             catch (Exception ex)
             {
-                Assert.AreEqual("Empty Exception", ex.Message);
+                Assert.AreEqual("Mood should not be Empty", ex.Message);
             }
         }
         [Test]
@@ -37,6 +37,22 @@ namespace Mood_Analyser
             object expected = new Analyser(input);
             object actual = MoodAnalyserFactory.CreateMoodAnalyse("Mood_Analyser.Analyser", "Mood_Analyser.Analyser");
             expected.Equals(actual);
+        }
+        [Test]
+        public void GivenImproperClassName_ShouldthrowNoSuchClassException()
+        {
+            try
+            {
+                string input = null;
+                object expected = new Analyser(input);
+                object actual = MoodAnalyserFactory.CreateMoodAnalyse("Mood_Analyser.Anal", "Mood_Analyser.Analyser");
+                expected.Equals(actual);
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual("Class Not Found", ex.Message);
+            }
+
         }
     }
 }
