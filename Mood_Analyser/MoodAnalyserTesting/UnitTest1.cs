@@ -111,6 +111,19 @@ namespace Mood_Analyser
             object actual = MoodAnalyserFactory.InvokeMoodAnalyser("Happy", "Mood");
             Assert.AreEqual(expected, actual);
         }
-        
+        [Test]
+        public void GivenImproperMethodName_shouldThrowNoSuchMethodException_UsingReflection()
+        {
+            try
+            {
+                string expected = "Happy";
+                object actual = MoodAnalyserFactory.InvokeMoodAnalyser("Happy", "Analyser");
+                Assert.AreEqual(expected, actual);
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual("Method is Not Found", ex.Message);
+            }
+        }
     }
 }
