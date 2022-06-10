@@ -138,12 +138,26 @@ namespace Mood_Analyser
             try
             {
                 string expected = "Happy";
-                string actual = MoodAnalyserFactory.DynamicMood("Happy", "mess");
+                string actual = MoodAnalyserFactory.DynamicMood("Happy", "messa");
                 Assert.AreEqual(expected, actual);
             }
             catch (Exception ex)
             {
                 Assert.AreEqual("Field Not Found", ex.Message);
+            }
+        }
+        [Test]
+        public void GivenNullAsMessage_shouldthrowNoSuchFieldException_UsingDynamicMethod()
+        {
+            try
+            {
+                string expected = "Happy";
+                string actual = MoodAnalyserFactory.DynamicMood(null, "message");
+                Assert.AreEqual(expected, actual);
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual("Mood should not be null", ex.Message);
             }
         }
     }
