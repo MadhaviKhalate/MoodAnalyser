@@ -125,5 +125,12 @@ namespace Mood_Analyser
                 Assert.AreEqual("Method is Not Found", ex.Message);
             }
         }
+        [Test]
+        public void GivenHappyAsInput_shouldReturnHappy_UsingDynamicMethod()
+        {
+            string expected = "Happy";
+            string actual = MoodAnalyserFactory.DynamicMood("Happy", "message");
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
