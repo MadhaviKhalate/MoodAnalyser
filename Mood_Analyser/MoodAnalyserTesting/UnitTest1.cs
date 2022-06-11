@@ -151,7 +151,7 @@ namespace Mood_Analyser
         {
             try
             {
-                Console.WriteLine("checking problem");
+                Console.WriteLine("Whats problem going on");
                 string expected = "Happy";
                 string actual = MoodAnalyserFactory.DynamicMood(null, "message");
                 Assert.AreEqual(expected, actual);
